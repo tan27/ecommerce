@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './Navigation.css';
 
 function Navigation() {
+    const [navbarOpen, setNavbarOpen] = useState(false);
+
+    const handleToggle = () => {
+        setNavbarOpen(prev => !prev)
+      }
+
     return (
-        <div>
-        <ul className='flex pa3 mr6 list justify-end'>
-            <li>About</li>
-            <li>Home</li>
-            <li>Services</li>
-            <li><button>Contact</button></li>
-        </ul>
-            
-        </div>
-    )
+        // <nav className="navBar">
+        // <button onClick={handleToggle}>{navbarOpen ? "Showing" : "Not Showing"}</button>
+        // <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+        //     <li>About</li>
+        //     <li>Home</li>
+        //     <li>Services</li>
+        //     <li><button>Contact</button></li>
+        // </ul>
+        // </nav>
+    ) 
 }
 
 export default Navigation;

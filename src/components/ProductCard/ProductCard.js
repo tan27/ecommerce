@@ -1,14 +1,17 @@
 import React from 'react';
-// import './ProductCard.css';
+import './ProductCard.css';
+import { useCart } from "react-use-cart";
 
-const ProductCard = ( {title, price, description, image} ) => {
+const ProductCard = ( {items, title, price, description, image} ) => {
+    const { addItem } = useCart();
+
     return (
-        <div className='tc bg-light-green w-20 ma3 pa4 grow shadow-5'>
+        <div className='card tc bg-light-green ma3 pa4 grow shadow-5'>
             <img alt='' src={image} height='200'></img>
-            <h3 className='pa4'>{title}</h3>
+            <button className='ma4' onClick={() => addItem(items)}>Add to cart</button>
             <p>${price}</p>
+            <h3 className='pa4'>{title}</h3>
             {/* <p>{description}</p> */}
-            <button>Add To Cart</button>
         </div>
     )
 }

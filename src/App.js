@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ProductList from './components/ProductList/ProductList';
-import Navigation from './components/Navigation/Navigation';
+import { CartProvider } from "react-use-cart";
+import Cart from './components/Cart/Cart';
+import CartMenu from './components/Cart/CartMenu';
 
 function App() {
   const [error, setError] = useState(null);
@@ -8,7 +10,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.com/products?limit=5')
       .then(res => res.json())
       .then(
         (items) => {
@@ -29,8 +31,12 @@ function App() {
   } else {
     return (
       <>
-      <Navigation />
-      <ProductList items={items} />
+      <CartProvider>
+        <ProductList items={items} />
+          <CartMenu>
+            <Cart />
+          </CartMenu>
+      </CartProvider>
       </>
     );
   }
