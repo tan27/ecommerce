@@ -3,7 +3,7 @@ import ProductCard from '../ProductCard/ProductCard.js';
 
 function ProductList({items}) {
     return (
-      <div> {
+      <div className='flex flex-wrap justify-center'> {
         items.map(items => {
           return (
             <ProductCard

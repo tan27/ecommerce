@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ProductList from './components/ProductList/ProductList';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   const [error, setError] = useState(null);
@@ -7,7 +8,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=5')
+    fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(
         (items) => {
@@ -27,7 +28,10 @@ function App() {
     return <div>Loading...</div>;
   } else {
     return (
+      <>
+      <Navigation />
       <ProductList items={items} />
+      </>
     );
   }
 }
