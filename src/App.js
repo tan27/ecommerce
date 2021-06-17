@@ -4,12 +4,15 @@ import { CartProvider } from "react-use-cart";
 import Cart from './components/Cart/Cart';
 import CartMenu from './components/Cart/CartMenu';
 import Nav from './components/Nav/Nav';
+import Signin from './components/Signin/Signin';
+import Register from './Register/Register';
 
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [searchField, setSearchField] = useState('');
+  const [route, setRoute] = useState('signin');
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -26,6 +29,11 @@ function App() {
       )
   }, [])
 
+  
+  const onRouteChange = (route) => {
+    setRoute(route);
+  }
+
   const searchChange = (e) => {
     setSearchField(e.target.value)
   }
@@ -41,14 +49,21 @@ function App() {
   } else {
     return (
       <>
-      <CartProvider>
-      <Nav searchChange={searchChange}>
-        <CartMenu>
-            <Cart />
-        </CartMenu>
-      </Nav>
-          <ProductList items={itemsFilter} />
-      </CartProvider>
+        {route === 'home' ? 
+          <>
+            <CartProvider>
+            <Nav onRouteChange={onRouteChange} searchChange={searchChange}>
+              <CartMenu>
+                  <Cart />
+              </CartMenu>
+            </Nav>
+                <ProductList items={itemsFilter} />
+            </CartProvider>
+          </> : (route === 'signin'
+                ? <Signin onRouteChange={onRouteChange} />
+                : <Register onRouteChange={onRouteChange} />  
+              )
+        }
       </>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import CartMenu from '../Cart/CartMenu'
 
-function Nav( {searchChange} ) {
+function Nav( {searchChange, onRouteChange} ) {
     return (
         <div className='bg-light-blue flex justify-end'>
             <input onChange={searchChange} placeholder='search'></input>
@@ -10,7 +10,7 @@ function Nav( {searchChange} ) {
                 <li>Home</li>
                 <li>About</li>
                 <li>Contact</li>
-                <button>Signout</button>
+                <button onClick={() => onRouteChange('signin')}>Signout</button>
             </ul>
         </div>
     )
