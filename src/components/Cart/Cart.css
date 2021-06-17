@@ -1,24 +1,29 @@
 .cart {
     position: relative;
   }
-  
+
   .cartb {
-    position: fixed;
     right: 30px;
-    top: 40px;
-    z-index: 10;
     cursor: pointer;
+  }
+
+  .cartb-active {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 100;
   }
   
   .menuNav {
-    overflow-y: scroll;
     list-style: none;
     position: fixed;
     top: 0;
     background: darkcyan;
     right: -100%;
     bottom: 0;
-    height: 100vh;
+    height: 85vh;
+    width: 500px;
     overflow: hidden;
     max-width: 40%;
     z-index: 9;
@@ -27,8 +32,15 @@
   .menuNav.showMenu {
     padding: 2rem;
     right: 0;
+    width: 500px;
+
   }
   
   .menuNav li:first-child {
     margin-top: 1rem;
+  }
+
+  .updt {
+    margin: 0.1rem;
+    padding: 0.2em;
   }

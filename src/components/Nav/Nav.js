@@ -3,10 +3,15 @@ import CartMenu from '../Cart/CartMenu'
 
 function Nav( {searchChange} ) {
     return (
-        <div className='bg-light-blue'>
+        <div className='bg-light-blue flex justify-end'>
             <input onChange={searchChange} placeholder='search'></input>
-            <button>Signout</button>
             <CartMenu />
+            <ul className='flex list pa2'>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <button>Signout</button>
+            </ul>
         </div>
     )
 }
