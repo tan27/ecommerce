@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Cart.css'
 import Cart from './Cart';
-// import { useCart } from "react-use-cart";
+import { useCart } from "react-use-cart";
 
 function CartMenu() {
     const [openCart, setOpenCart] = useState(false);
+    const {totalItems} = useCart();
 
     const handleToggle = () => {
         setOpenCart(prev => !prev)
@@ -12,7 +13,7 @@ function CartMenu() {
 
     return (
         <div className='cart'>
-            <button className='cartb' onClick={handleToggle}>{openCart ? "Keep Shopping" : "Cart"}</button>
+            <button className='cartb' onClick={handleToggle}>{openCart ? "Keep Shopping" : "Cart"} ({totalItems})</button>
                 <div className={`menuNav ${openCart ? " showMenu" : ""}`}>
                     <Cart /> 
                 </div>

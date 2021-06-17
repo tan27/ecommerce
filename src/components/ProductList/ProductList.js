@@ -2,7 +2,6 @@ import React from 'react';
 import ProductCard from '../ProductCard/ProductCard.js';
 
 function ProductList({items}) {
-
     return (
       <div className='flex flex-wrap justify-center'> {
         items.map((items) => {
@@ -19,8 +18,6 @@ function ProductList({items}) {
           })
         }
       </div>
-    
-      
     );
 }
 
