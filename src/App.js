@@ -5,7 +5,7 @@ import Cart from './components/Cart/Cart';
 import CartMenu from './components/Cart/CartMenu';
 import Nav from './components/Nav/Nav';
 import Signin from './components/Signin/Signin';
-import Register from './Register/Register';
+import Register from './components/Register/Register';
 
 function App() {
   const [error, setError] = useState(null);
@@ -13,6 +13,22 @@ function App() {
   const [items, setItems] = useState([]);
   const [searchField, setSearchField] = useState('');
   const [route, setRoute] = useState('signin');
+  const [user, setUser] = useState( {
+                                        id: '',
+                                        name: '',
+                                        email: '',
+                                        joined: ''
+                                      })
+
+
+const loadUser = (data) => {
+    setUser({
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      joined: data.joined
+    })
+  }
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -60,7 +76,7 @@ function App() {
                 <ProductList items={itemsFilter} />
             </CartProvider>
           </> : (route === 'signin'
-                ? <Signin onRouteChange={onRouteChange} />
+                ? <Signin user={user} loadUser={loadUser} onRouteChange={onRouteChange} />
                 : <Register onRouteChange={onRouteChange} />  
               )
         }
