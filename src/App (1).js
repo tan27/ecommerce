@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from './components/ProductList/ProductList';
 import { CartProvider } from 'react-use-cart';
-// import Cart from './components/Cart/Cart';
+import Cart from './components/Cart/Cart';
 import CartMenu from './components/Cart/CartMenu';
 import Nav from './components/Nav/Nav';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
-// import { useCart } from "react-use-cart";
 
 function App() {
 	const [error, setError] = useState(null);
@@ -21,20 +20,20 @@ function App() {
 		email: '',
 		joined: '',
 	});
-		
-	// const initialState = () => {
-	// 	setError(null);
-	// 	setIsLoaded(false);
-	// 	setItems([]);
-	// 	setSearchField('');
-	// 	setRoute('signin');
-	// 	setUser({
-	// 		id: '',
-	// 		name: '',
-	// 		email: '',
-	// 		joined: '',
-	// 	});
-	// };
+
+	const initialState = () => {
+		setError(null);
+		setIsLoaded(false);
+		setItems([]);
+		setSearchField('');
+		setRoute('signin');
+		setUser({
+			id: '',
+			name: '',
+			email: '',
+			joined: '',
+		});
+	};
 
 	const loadUser = (data) => {
 		setUser({
@@ -42,10 +41,8 @@ function App() {
 			name: data.name,
 			email: data.email,
 			joined: data.joined,
-			
 		});
 	};
-
 
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')
@@ -64,11 +61,11 @@ function App() {
 
 	const onRouteChange = (route) => {
 		if (route === 'signout') {
-			setRoute('signin')
-		} 
-		else if (route === 'home') {
+			setRoute('signin');
+		} else if (route === 'home') {
 			setSignIn(true);
-		} setRoute(route);
+		}
+		setRoute(route);
 	};
 
 	const searchChange = (e) => {
@@ -91,11 +88,10 @@ function App() {
 						<CartProvider>
 							<Nav
 								onRouteChange={onRouteChange}
-								searchChange={searchChange}
-								// initialState={initialState}
-								>
-								<CartMenu />
-									
+								searchChange={searchChange}>
+								<CartMenu>
+									<Cart />
+								</CartMenu>
 							</Nav>
 							<ProductList items={itemsFilter} />
 						</CartProvider>
@@ -105,13 +101,9 @@ function App() {
 						user={user}
 						loadUser={loadUser}
 						onRouteChange={onRouteChange}
-						isSignedIn={isSignedIn}
 					/>
 				) : (
-					<Register 
-						user={user} 
-						loadUser={loadUser} 
-						onRouteChange={onRouteChange} />
+					<Register onRouteChange={onRouteChange} />
 				)}
 			</div>
 		);

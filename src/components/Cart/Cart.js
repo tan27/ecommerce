@@ -11,7 +11,7 @@ function Cart() {
         totalItems,
         cartTotal
       } = useCart();
-    
+      
       if (isEmpty) return <p className='mt5 tc'>Your cart is empty</p>;
     
       return (
@@ -40,6 +40,7 @@ function Cart() {
           </ul>
 
           <h1 className='ml4'>Total: ${ cartTotal.toFixed(2) }</h1>
+          
         </>
       );
     }
