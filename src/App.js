@@ -14,27 +14,13 @@ function App() {
 	const [items, setItems] = useState([]);
 	const [searchField, setSearchField] = useState('');
 	const [route, setRoute] = useState('signin');
-	const [isSignedIn, setSignIn] = useState(false);
+	// const [isSignedIn, setSignIn] = useState(false);
 	const [user, setUser] = useState({
 		id: '',
 		name: '',
 		email: '',
 		joined: '',
 	});
-		
-	// const initialState = () => {
-	// 	setError(null);
-	// 	setIsLoaded(false);
-	// 	setItems([]);
-	// 	setSearchField('');
-	// 	setRoute('signin');
-	// 	setUser({
-	// 		id: '',
-	// 		name: '',
-	// 		email: '',
-	// 		joined: '',
-	// 	});
-	// };
 
 	const loadUser = (data) => {
 		setUser({
@@ -45,7 +31,6 @@ function App() {
 			
 		});
 	};
-
 
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')
@@ -63,12 +48,13 @@ function App() {
 	}, []);
 
 	const onRouteChange = (route) => {
-		if (route === 'signout') {
-			setRoute('signin')
-		} 
-		else if (route === 'home') {
-			setSignIn(true);
-		} setRoute(route);
+		// if (route === 'signout') {
+		// 	setRoute('signin')
+		// } 
+		// else if (route === 'home') {
+		// 	setSignIn(true);
+		// } 
+		setRoute(route);
 	};
 
 	const searchChange = (e) => {
@@ -92,7 +78,7 @@ function App() {
 							<Nav
 								onRouteChange={onRouteChange}
 								searchChange={searchChange}
-								// initialState={initialState}
+
 								>
 								<CartMenu />
 									
@@ -105,7 +91,7 @@ function App() {
 						user={user}
 						loadUser={loadUser}
 						onRouteChange={onRouteChange}
-						isSignedIn={isSignedIn}
+						// isSignedIn={isSignedIn}
 					/>
 				) : (
 					<Register 

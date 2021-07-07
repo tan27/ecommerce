@@ -1,0 +1,17 @@
+.navbar {
+    /* background: linear-gradient(to right, #00b4db, #0083b0); */
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background-color: white;
+}
+
+.navbar button {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#logo {
+    width: 20em;
+    margin-left: 6rem;    
+}

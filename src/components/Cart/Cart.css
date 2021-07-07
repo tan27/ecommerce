@@ -2,10 +2,10 @@
     position: relative;
   }
 
-  .cartb {
+  /* .cartb {
     right: 30px;
     cursor: pointer;
-  }
+  } */
 
   .cartb-active {
     position: fixed;
@@ -19,28 +19,28 @@
     list-style: none;
     position: fixed;
     top: 0;
-    background: darkcyan;
+    background: rgb(127, 188, 212);
     right: -100%;
     bottom: 0;
     height: 85vh;
     width: 500px;
-    overflow: hidden;
     max-width: 40%;
     z-index: 9;
+    overflow: scroll;
   }
   
   .menuNav.showMenu {
     padding: 2rem;
     right: 0;
     width: 500px;
-
   }
   
   .menuNav li:first-child {
-    margin-top: 1rem;
+    margin-top: 0.1rem;
   }
 
   .updt {
-    margin: 0.1rem;
+    margin: 0.5rem;
     padding: 0.2em;
+    background-color: white;
   }

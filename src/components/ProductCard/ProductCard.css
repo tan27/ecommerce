@@ -1,8 +1,11 @@
 .card {
     width: 300px;
     height: auto;
-    border: 2px solid lightblue;
+    /* border: 2px solid lightblue; */
     padding: 2rem;
     margin: 1rem;
     border-radius: 25px;
+    background-color: white;
+    margin-top: 7rem;
 }
+
