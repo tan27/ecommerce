@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(223, 217, 217);
+}
+
+.logo {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    padding-bottom: 3vh;
+}
+
+.sign {
+    background-image: linear-gradient(to right, #83d5e7, #4dc0da, #439cb9);
+    padding: 0.5vw;
+    width: 9vw;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: snow;
+    font-size: 0.6vw;
+}
+
+.forms {
+    border:none;
+    margin-bottom: 1vh;
+}
+
+input {
+    outline: none;
+    border-bottom: grey;
+    height: auto;
+    margin-left:3px;
+    padding: 0.25vw;
+    box-shadow: -7px 10px 0px -7px #ddd9d9;
+  }
