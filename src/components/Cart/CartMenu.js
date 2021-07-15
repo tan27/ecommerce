@@ -13,7 +13,12 @@ function CartMenu() {
 
     return (
         <div className='cart'>
-            <button className= {`${openCart ? "cartb-active" : ""}`} onClick={handleToggle}>{openCart ? "Keep Shopping" : "Cart"} ({totalItems})</button>
+                <button 
+                    className= {`${openCart ? "cartb-active" : "cartb-inactive"}`} 
+                    onClick={handleToggle}>
+                    {openCart ? "Keep Shopping" : "Cart"} ({totalItems})
+                </button>
+
                 <div className={`menuNav ${openCart ? "showMenu" : ""}`}>
                     <Cart /> 
                 </div>

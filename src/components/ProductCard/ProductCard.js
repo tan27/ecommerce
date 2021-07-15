@@ -7,8 +7,8 @@ const ProductCard = ( {items, title, price, description, image} ) => {
 
     return (
         <div className='card tc ma3 mt4 pa4 grow shadow-5 '>
-            <img alt='' src={image} height='200'></img>
-            <button className='ma4' onClick={() => addItem(items)}>Add to cart</button>
+            <img alt='' src={image} height='160'></img>
+            <button className='atc ma4' onClick={() => addItem(items)}>Add to cart</button>
             <p>${price}</p>
             <h3 className='pa4'>{title}</h3>
             {/* <p>{description}</p> */}

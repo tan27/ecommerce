@@ -9,4 +9,7 @@
 
 body {
     background: linear-gradient(to right, #83d5e7, #439cb9);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

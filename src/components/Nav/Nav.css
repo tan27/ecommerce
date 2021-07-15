@@ -6,12 +6,58 @@
     background-color: white;
 }
 
-.navbar button {
+.rightmenu {
+    margin-right: 6rem;
+}
+
+.search {
+    border: 1px black solid;
+}
+
+.signout {
     padding: 0.5rem;
     cursor: pointer;
+    border: 0.5px solid black;
+    margin-left: 0.1vw;
+
 }
 
 #logo {
-    width: 20em;
-    margin-left: 6rem;    
+    width: 16em;
+    margin-left: 6rem;
+    padding-top: 1vh;    
+}
+
+#logo1 {
+    display: none;
+  }
+
+@media screen and (max-width: 900px) {
+    #logo {
+        display: none;  
+    }
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12vw;
+        height: auto;
+        padding: 0;
+        font-size: 2vw;
+    }
+    .signout { 
+        font-size: 2vw;
+    }
+
+    #logo1 {
+        display: block;
+        width: 3em;
+        margin-left: 15vw;
+        padding-top: 1vh;
+      }
+    
+    .rightmenu {
+        margin-right: 15vw;
+    }
+    
 }

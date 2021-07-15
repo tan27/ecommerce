@@ -2,8 +2,8 @@ import React from 'react';
 import CartMenu from '../Cart/CartMenu';
 import { useCart } from "react-use-cart";
 import './Nav.css';
-import logo from './default.png';
-
+import logo from '../../default.png';
+import logo1 from '../../default1.png';
 
 function Nav ( {searchChange, onRouteChange} ) {
 
@@ -15,10 +15,11 @@ function Nav ( {searchChange, onRouteChange} ) {
     return (
         <div className='navbar flex'> 
         <img id='logo' src={logo} alt='logo'/>
-            <div className='flex pr6'>
-                <input onChange={searchChange} placeholder='  Search'></input>
+        <img id='logo1' src={logo1} alt='logo'/>
+            <div className='flex rightmenu'>
+                <input className='search' onChange={searchChange} placeholder='Search'></input>
                 <CartMenu />
-                    <button onClick={async () => { 
+                    <button className='signout' onClick={async () => { 
                         await onEmptyCart();
                         onRouteChange('signout');
                         }}>Signout</button>

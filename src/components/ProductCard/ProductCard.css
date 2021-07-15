@@ -1,11 +1,35 @@
 .card {
     width: 300px;
     height: auto;
-    /* border: 2px solid lightblue; */
     padding: 2rem;
     margin: 1rem;
     border-radius: 25px;
     background-color: white;
     margin-top: 7rem;
+}
+
+.atc {
+    padding: 0.2vw;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    img {
+        width: 100px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .card {
+        width: 80vw;
+        height: auto;
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 25px;
+        background-color: white;
+        margin-top: 5rem;
+        font-size: 4vw;
+    }
 }
 

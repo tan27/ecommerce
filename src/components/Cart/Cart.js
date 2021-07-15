@@ -16,7 +16,7 @@ function Cart() {
     
       return (
         <>
-          <h1 className='mt5'>Cart: {totalItems} </h1>
+          <h3 className='mt5'>Cart: {totalItems} </h3>
     
           <ul className='list pa2 ma2'>
             {items.map((item) => (
@@ -39,9 +39,9 @@ function Cart() {
             ))}
           </ul>
 
-          <h1>Total: ${ cartTotal.toFixed(2) }</h1>
+          <h3>Total: ${ cartTotal.toFixed(2) }</h3>
 
-          <button>Checkout</button>
+          <button className='checkout'>Checkout</button>
           
         </>
       );
