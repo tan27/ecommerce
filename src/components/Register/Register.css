@@ -6,7 +6,7 @@ body {
     display: inline-block;
     justify-content: center;
     align-items: center;
-    width: 3vw;
+    width: 4vw;
     padding-bottom: 3vh;
 }
 
@@ -34,4 +34,37 @@ input {
     margin-left:3px;
     padding: 0.25vw;
     box-shadow: -7px 10px 0px -7px #ddd9d9;
+  }
+
+  @media screen and (max-width: 1200px) {
+    article {
+        width: 9rem;
+    }
+
+    .logo {
+        width: 7vw;
+        padding-bottom: 2vh;
+    }
+
+    .sign {
+        padding: 0.9vw;
+        width: 15vw;
+        border-radius: 50px;
+        border: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: snow;
+        font-size: 1.2vw;
+    }
+
+    input {
+        outline: none;
+        border-bottom: grey;
+        height: auto;
+        width: 100%;
+        padding: 0.25vw;
+        box-shadow: -7px 10px 0px -7px #ddd9d9;
+        font-size: 1vw;
+      }
+      
   }

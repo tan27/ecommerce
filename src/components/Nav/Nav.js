@@ -5,7 +5,7 @@ import './Nav.css';
 import logo from './default.png';
 
 
-function Nav ( {searchChange, onRouteChange, initialState} ) {
+function Nav ( {searchChange, onRouteChange} ) {
 
     const { emptyCart } = useCart();
     const onEmptyCart = async () => {

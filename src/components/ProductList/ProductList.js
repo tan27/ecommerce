@@ -4,16 +4,16 @@ import ProductCard from '../ProductCard/ProductCard.js';
 function ProductList({items}) {
     return (
       <div className='flex flex-wrap justify-center static'> {
-        items.map((items) => {
+        items.map((item) => {
           return (
             <ProductCard
-              key={items.id}
-              id={items.id}
-              items={items}
-              image={items.image}
-              title={items.title}
-              price={items.price}
-              description={items.description}
+              key={item.id}
+              id={item.id}
+              items={item}
+              image={item.image}
+              title={item.title}
+              price={item.price}
+              description={item.description}
           />
           );
           })

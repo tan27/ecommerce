@@ -49,7 +49,7 @@ class Register extends React.Component {
     return (
             <div className="tc">
                 <article className="mv6 mw5 center shadow-5 bg-white br4 w-50">
-                <main className="pa4">
+                <main className="main pa4">
                     <form>
                         <fieldset 
                             id="sign_up"
@@ -58,7 +58,7 @@ class Register extends React.Component {
                         <img className='logo' src={logo} alt='Logo'/>
                         <div>
                             <input 
-                            className="forms" 
+                            className="forms input-reset" 
                             type="name" 
                             name="name"  
                             id="name"
@@ -68,7 +68,7 @@ class Register extends React.Component {
                         </div>
                         <div className="mt3">
                             <input 
-                            className="forms" 
+                            className="forms input-reset" 
                             type="email" 
                             name="email-address"  
                             id="email-address"
@@ -78,7 +78,7 @@ class Register extends React.Component {
                         </div>
                         <div className="mv3">
                             <input 
-                            className="forms" 
+                            className="forms input-reset" 
                             type="password" 
                             name="password"  
                             id="password"

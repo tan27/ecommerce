@@ -48,12 +48,6 @@ function App() {
 	}, []);
 
 	const onRouteChange = (route) => {
-		// if (route === 'signout') {
-		// 	setRoute('signin')
-		// } 
-		// else if (route === 'home') {
-		// 	setSignIn(true);
-		// } 
 		setRoute(route);
 	};
 

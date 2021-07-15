@@ -42,11 +42,11 @@ function Signin( {loadUser, onRouteChange}) {
 						<fieldset
 							id='sign_up'
 							className='ba b--transparent'>
-							<legend className='f4 fw6 ph0 mh0 pt4'>Sign-In</legend>
+							<legend className='f4 fw6 pt4'>Sign-In</legend>
 							<img className='logo' src={logo} alt='Logo'/>
 							<div>
 								<input
-									className='forms mb3'
+									className='forms mb3 input-reset'
 									type='email'
 									name='email-address'
 									id='email-address'
@@ -56,7 +56,7 @@ function Signin( {loadUser, onRouteChange}) {
 							</div>
 							<div className='mv3'>
 								<input
-									className='forms'
+									className='forms input-reset'
 									type='password'
 									name='password'
 									id='password'
