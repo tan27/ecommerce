@@ -44,7 +44,7 @@ function App() {
 					setIsLoaded(true);
 					setError(error);
 				}
-			);
+			).catch('error loading products')
 	}, []);
 
 	const onRouteChange = (route) => {
