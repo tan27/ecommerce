@@ -9,7 +9,7 @@ const ProductCard = ( {items, title, price, description, image} ) => {
 
     const handleClick = () => {
         setText('Added to Cart');
-        setBtn('"background-color: blue"')
+        setBtnColor('"background-color: blue"')
         setTimeout (() => {
             setText('Add to Cart')
         }, 3000);
