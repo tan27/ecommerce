@@ -29,10 +29,14 @@
 }
 
 #logo1 {
+    padding: 1rem;
     display: none;
   }
 
 @media screen and (max-width: 900px) {
+    .navbar {
+        height: auto;
+    }
     #logo {
         display: none;  
     }
